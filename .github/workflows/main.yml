@@ -20,6 +20,6 @@ jobs:
         run: |
           git bisect start
           git bisect bad
-          git bisect good 0.1.0
+          git bisect good =e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c
           git bisect run python manage.py test
           git bisect reset
