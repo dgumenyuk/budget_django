@@ -12,6 +12,6 @@ import os
 
 os.system("git bisect start")
 os.system("git bisect bad HEAD")
-os.system("git bisect good HEAD~10")
+os.system("git bisect good HEAD@{5}")
 os.system("git bisect run python manage.py test")
 os.system("git bisect reset")
