@@ -17,4 +17,9 @@ jobs:
         run: echo */ && pip install -r requirements.txt
       - name: Run tests
 
-        run: python script.py
+        run: |
+          git bisect start
+          git bisect bad
+          git bisect good e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c
+          git bisect run python manage.py test
+          git bisect reset
